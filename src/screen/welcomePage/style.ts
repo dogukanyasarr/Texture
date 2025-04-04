@@ -16,7 +16,7 @@ export const style = StyleSheet.create({
   },
   textContainer: {
     alignItems: 'center',
-    marginTop: '90%', // Üstten biraz boşluk
+    marginTop: '90%',
   },
   textTitle: {
     fontSize: 30,
@@ -30,6 +30,7 @@ export const style = StyleSheet.create({
   },
   buttonContainer: {
     marginTop: 20,
+    marginBottom:20,
     alignItems: 'center',
   },
 });

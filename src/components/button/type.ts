@@ -1,12 +1,11 @@
-
 export type ButtonComponentType = {
     text: string;
     onPress: () => void;
     isChange: boolean;
     width?: number | string;
     fontSize?: number;
-    paddingRight?: number;
-    paddingLeft?: number;
-    paddingTop?: number;
-    paddingBottom?: number;
+    marginRight?: number;
+    marginLeft?: number;
+    marginTop?: number;
+    marginBottom?: number;
 }
