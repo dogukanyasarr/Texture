@@ -1,11 +1,11 @@
 import { StyleSheet } from "react-native";
+import colors from "../../constants/colors";
 
 export const style = StyleSheet.create({
     container: {
         flex: 1,
-        alignItems: 'center',
-      },
-      backgroundImage: {
+    },
+    backgroundImage: {
         position: 'absolute',
         top: 0,
         left: 0,
@@ -13,70 +13,62 @@ export const style = StyleSheet.create({
         bottom: 0,
         width: '100%',
         height: '100%',
-      },
-    content: {
-        width: '85%',
-        position: 'absolute',
-        top: '45%',
-        alignItems: 'center',
     },
-    title: {
-        fontSize: 28,
+    textContainer: {
+        left: '3%',
+        marginTop: '45%',
+
+
+    },
+    textTitle: {
+        fontSize: 26,
         fontWeight: 'bold',
-        color: '#333',
-        marginBottom: 5,
+        color: 'white'
     },
-    subtitle: {
-        fontSize: 16,
-        color: '#555',
-        marginBottom: 20,
+    inputContainer: {
+        alignItems: 'center'
+
     },
-    input: {
-        width: '100%',
-        padding: 12,
-        backgroundColor: '#F5F5F5',
-        borderRadius: 8,
-        fontSize: 16,
-        marginBottom: 15,
+    emailInput: {
+        height: 50,
+        width: '95%',
+        borderRadius: 10,
+        paddingHorizontal: 15,
+        backgroundColor: 'rgba(255, 255, 255, 0.4)',
+        marginTop: '15%',
     },
-    row: {
-        width: '100%',
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        marginBottom: 20,
+    passwordInput: {
+        height: 50,
+        width: '95%',
+        borderRadius: 10,
+        paddingHorizontal: 15,
+        backgroundColor: 'rgba(255, 255, 255, 0.4)',
+        marginTop: '5%',
     },
-    rememberMe: {
-        color: '#333',
-        fontSize: 14,
+    textButton: {
+        alignItems: 'flex-end',
+        marginRight: '5%',
+        marginTop: '2%'
     },
-    forgotPassword: {
-        color: '#007BFF',
-        fontSize: 14,
-        textDecorationLine: 'underline',
+    buttonTopContainer: {
+        marginTop: 20,
+        alignItems:'center'
     },
-    loginButton: {
-        width: '100%',
-        paddingVertical: 12,
-        backgroundColor: '#1E3A8A',
-        borderRadius: 8,
-        alignItems: 'center',
+    line:{
+        alignItems:'center',
+        marginVertical:20
+        
+
     },
-    loginButtonText: {
-        color: 'white',
-        fontSize: 16,
-        fontWeight: 'bold',
+    lineText:{
+        color: colors.darkGreen,
+        fontSize:16,
+        fontWeight:'bold'
     },
-    signupContainer: {
-        flexDirection: 'row',
-        marginTop: 15,
+
+    buttonBottomContainer: {
+        alignItems:'center'
+
     },
-    signupText: {
-        color: '#333',
-        fontSize: 14,
-    },
-    signupLink: {
-        color: '#007BFF',
-        fontSize: 14,
-        fontWeight: 'bold',
-    },
+
 });

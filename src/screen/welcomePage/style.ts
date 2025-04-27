@@ -3,7 +3,6 @@ import { StyleSheet } from "react-native";
 export const style = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
   },
   backgroundImage: {
     position: 'absolute',
@@ -14,23 +13,32 @@ export const style = StyleSheet.create({
     width: '100%',
     height: '100%',
   },
+  itemContainer:{
+    marginTop:'95%',
+    left:'3%',
+    width:'94%',
+  },
   textContainer: {
-    alignItems: 'center',
-    marginTop: '90%',
+    
+    
+  
   },
   textTitle: {
     fontSize: 30,
     fontWeight: 'bold',
+    color:'white'
   },
   textDesc: {
     fontSize: 18,
-    textAlign: 'center',
     paddingTop: 10,
     width: 300,
+    color:'white'
   },
-  buttonContainer: {
-    marginTop: 20,
-    marginBottom:20,
-    alignItems: 'center',
+  buttonTopContainer: {
+    marginTop:40
   },
+  buttonBottomContainer:{
+    marginTop:20
+
+  }
 });

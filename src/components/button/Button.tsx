@@ -16,8 +16,6 @@ const Button = (props: ButtonComponentType) => {
                     <Text style={[
                         style.buttonText, 
                         {fontSize: props.fontSize || 16},
-                        {paddingTop: props.paddingTop || 1},
-                        {paddingBottom: props.paddingBottom || 1}
                         ]}>{props.text}</Text>
                 </TouchableOpacity>
             )
@@ -30,8 +28,6 @@ const Button = (props: ButtonComponentType) => {
                     <Text style={[
                         style.buttonTextBorder, 
                         {fontSize: props.fontSize || 16}, 
-                        {paddingTop: props.paddingTop || 1},
-                        {paddingBottom: props.paddingBottom || 1}
                         ]}>{props.text}</Text>
                 </TouchableOpacity>
             )

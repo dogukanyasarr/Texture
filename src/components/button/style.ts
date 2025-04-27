@@ -5,24 +5,26 @@ export const style = StyleSheet.create({
     button:{
         backgroundColor: colors.darkGreen,
         alignItems: 'center',
-        borderRadius: 20,
+        borderRadius: 10,
         paddingVertical: 10,
         paddingHorizontal: 20
 
     },
     buttonText:{
         color: 'white',
-        fontSize:16
+        fontSize:16,
+        fontWeight:'bold'
 
     },
     buttonBorder:{
-        backgroundColor:'white',
+        backgroundColor: 'rgba(255, 255, 255, 0)',
         borderColor: colors.darkGreen,
         borderWidth:1,
         alignItems: 'center',
-        borderRadius: 20,
+        borderRadius: 10,
         paddingVertical: 10,
-        paddingHorizontal: 20
+        paddingHorizontal: 20,
+        fontWeight:'bold'
 
     },
     buttonTextBorder:{

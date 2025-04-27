@@ -1,62 +1,75 @@
-import { View, Text, Image, TextInput, TouchableOpacity } from 'react-native';
+import { View, Text, Image, TextInput, TouchableOpacity, Alert } from 'react-native';
 import React, { useState } from 'react';
 import { style } from './style';
+import TextButton from '../../components/textButton/TextButton';
+import Button from '../../components/button/Button';
+import { auth } from '../../firebase/firebaseConfig';
+import { signInWithEmailAndPassword } from 'firebase/auth';
 
-const LoginPage = () => {
-  const [username, setUsername] = useState('');
+const LoginPage = ({ navigation }: any) => {
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+
+  const handlePress = async () => {
+    try {
+      if (!email || !password) {
+        Alert.alert('Hata', 'Email ve şifre boş bırakılamaz!');
+        return;
+      }
+
+      const userCredential = await signInWithEmailAndPassword(auth, email, password);
+      const user = userCredential.user;
+
+      console.log('Giriş başarılı:', user);
+      navigation.navigate('Home');
+
+    } catch (error: any) {
+      console.log(error);
+      Alert.alert('Giriş Hatası', error.message);
+    }
+  };
 
   return (
     <View style={style.container}>
-      {/* Arka Plan Resmi */}
-      <Image source={require('../../assets/images/loginpage_bg.jpg')} style={style.backgroundImage} />
+      <Image source={require('../../assets/images/darkbluebg.png')} style={style.backgroundImage} />
 
-      {/* Sayfa İçeriği */}
-      <View style={style.content}>
-        <Text style={style.title}>Welcome Back</Text>
-        <Text style={style.subtitle}>Login to your account</Text>
+      <View style={style.textContainer}>
+        <Text style={style.textTitle}>Tekrar Hoş Geldin!</Text>
+      </View>
 
-        {/* Kullanıcı Adı */}
+      <View style={style.inputContainer}>
         <TextInput
-          placeholder="Username"
-          value={username}
-          onChangeText={setUsername}
-          style={style.input}
-          placeholderTextColor="#888"
+          style={style.emailInput}
+          placeholder='Email'
+          value={email}
+          onChangeText={setEmail}
         />
-
-        {/* Şifre */}
         <TextInput
-          placeholder="Password"
+          style={style.passwordInput}
+          placeholder='Password'
+          secureTextEntry
           value={password}
           onChangeText={setPassword}
-          secureTextEntry
-          style={style.input}
-          placeholderTextColor="#888"
         />
+      </View>
 
-        {/* Şifremi Unuttum ve Beni Hatırla */}
-        <View style={style.row}>
-          <TouchableOpacity>
-            <Text style={style.rememberMe}>☐ Remember me</Text>
-          </TouchableOpacity>
-          <TouchableOpacity>
-            <Text style={style.forgotPassword}>Forgot Password?</Text>
-          </TouchableOpacity>
-        </View>
+      <View style={style.textButton}>
+        <TextButton
+          text='Şifremi Unuttum'
+          onPress={() => {/* Şifre sıfırlama işlemi yapabiliriz buraya */}}
+        />
+      </View>
 
-        {/* Giriş Butonu */}
-        <TouchableOpacity style={style.loginButton}>
-          <Text style={style.loginButtonText}>LOGIN</Text>
-        </TouchableOpacity>
+      <View style={style.buttonTopContainer}>
+        <Button text={'Giriş Yap'} onPress={handlePress} isChange={true} width={'95%'} fontSize={18} />
+      </View>
 
-        {/* Kayıt Ol */}
-        <View style={style.signupContainer}>
-          <Text style={style.signupText}>Don't have an account?</Text>
-          <TouchableOpacity>
-            <Text style={style.signupLink}> Sign up</Text>
-          </TouchableOpacity>
-        </View>
+      <View style={style.line}>
+        <Text style={style.lineText}>Veya</Text>
+      </View>
+
+      <View style={style.buttonBottomContainer}>
+        <Button text={'Kayıt Ol'} onPress={() => navigation.navigate('Signup')} isChange={false} width={'95%'} fontSize={18} />
       </View>
     </View>
   );
