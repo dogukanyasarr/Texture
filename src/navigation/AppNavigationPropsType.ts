@@ -1,6 +1,12 @@
 export type AppNavigationPropsType = {
-    Welcome: undefined;
+    First: undefined;
     Login: undefined;
     Signup: undefined;
     Home: undefined;
+    Profile: {
+        profileImage: string;
+        name: string;
+        surname: string;
+        email: string;
+    };
 }

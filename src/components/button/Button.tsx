@@ -10,7 +10,13 @@ const Button = (props: ButtonComponentType) => {
             ?
             (
                 <TouchableOpacity
-                    style={[style.button, { width: props.width as number | undefined }]}
+                    style={[
+                        style.button, 
+                        { 
+                            width: props.width as number | undefined,
+                            backgroundColor: props.backgroundColor || style.button.backgroundColor
+                        }
+                    ]}
                     onPress={props.onPress}
                 >
                     <Text style={[
@@ -22,12 +28,19 @@ const Button = (props: ButtonComponentType) => {
             :
             (
                 <TouchableOpacity
-                    style={[style.buttonBorder, { width: props.width as number | undefined }]}
+                    style={[
+                        style.buttonBorder, 
+                        { 
+                            width: props.width as number | undefined,
+                            borderColor: props.backgroundColor || style.buttonBorder.borderColor
+                        }
+                    ]}
                     onPress={props.onPress}
                 >
                     <Text style={[
                         style.buttonTextBorder, 
-                        {fontSize: props.fontSize || 16}, 
+                        {fontSize: props.fontSize || 16},
+                        {color: props.backgroundColor || style.buttonTextBorder.color}
                         ]}>{props.text}</Text>
                 </TouchableOpacity>
             )

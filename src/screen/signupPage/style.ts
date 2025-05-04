@@ -16,7 +16,7 @@ export const style = StyleSheet.create({
     },
     textContainer: {
         left: '3%',
-        marginTop: '55%',
+        marginTop: '15%',
     },
     textTitle: {
         fontSize: 26,
@@ -26,7 +26,7 @@ export const style = StyleSheet.create({
     inputContainer: {
         marginTop: '10%',
         marginLeft:'3%',
-        gap: 15, // burada her input arasında eşit boşluk olur (React Native 0.71 ve sonrası destekliyor)
+        gap: 15,
     },
     input: {
         height: 50,
@@ -35,7 +35,6 @@ export const style = StyleSheet.create({
         paddingHorizontal: 15,
         backgroundColor: 'rgba(255, 255, 255, 0.4)',
     },
-
     textButton: {
         alignItems: 'flex-end',
         marginRight: '5%',
@@ -45,5 +44,44 @@ export const style = StyleSheet.create({
         marginTop: 30,
         alignItems: 'center',
     },
-
+    profileImageContainer: {
+        width: 120,
+        height: 120,
+        borderRadius: 60,
+        backgroundColor: 'rgba(255, 255, 255, 0.4)',
+        alignSelf: 'center',
+        marginTop: 50,
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderWidth: 2,
+        borderColor: colors.blue,
+    },
+    profileImage: {
+        width: 120,
+        height: 120,
+        borderRadius: 60,
+    },
+    imageUploadButton: {
+        position: 'absolute',
+        bottom: 0,
+        right: 0,
+        backgroundColor: colors.blue,
+        width: 40,
+        height: 40,
+        borderRadius: 20,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    imageUploadText: {
+        color: colors.blue,
+        fontSize: 16,
+        fontWeight: 'bold',
+    },
+    previewImage: {
+        width: 100,
+        height: 100,
+        borderRadius: 50,
+        marginTop: 10,
+        alignSelf: 'center',
+    },
 });

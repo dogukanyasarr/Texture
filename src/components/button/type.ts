@@ -8,4 +8,5 @@ export type ButtonComponentType = {
     marginLeft?: number;
     marginTop?: number;
     marginBottom?: number;
+    backgroundColor?: string;
 }
